@@ -52,8 +52,6 @@ void setup()
   Serial.begin(115200);
   delay(10);
   
-  bat_init();
-
   String batvol = String(bat_get_voltage());
   Serial.println("Start voltage:"+batvol);
   
@@ -108,11 +106,8 @@ void setup()
   }
 }
 
-boolean enviar = true;
-
 void loop() {
   saveCapturedImage();
-  enviar = false;
   delay(interval * 1000);
 }
 
